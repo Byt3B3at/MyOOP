@@ -1,12 +1,32 @@
-﻿using System;
+﻿using MyOOP.Company;
+using System;
 
 namespace MyOOP
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        internal static int Main()
         {
-            Console.WriteLine("Hello World!");
+            var Max = new FullTimeEmployee()
+            {
+                FirstName = "Max",
+                LastName = "Mustermann",
+                AnnualSalary = 60000
+            };
+            Console.WriteLine($"{Max.GetFullName()} earns {Max.GetMonthlySalary()} per month.");
+
+            var Moritz = new Freelancer()
+            {
+                FirstName = "Moritz",
+                LastName = "Mustermann",
+                HourlyWage = 200,
+                HoursWorked = 160
+            };
+            Console.WriteLine($"{Moritz.GetFullName()} earned {Moritz.GetMonthlySalary()}.");
+
+            Console.WriteLine("\nProgram end reached. Press the any-key to exit.");
+            Console.ReadKey();
+            return 0;
         }
     }
 }
