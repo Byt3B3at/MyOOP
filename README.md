@@ -1,3 +1,3 @@
-I created this repository for training purposes and to demonstrate at the same time my knowledge about OOP.
+This repository is for training purposes and/or to show what I learned so far about OOP. It's written in C# (.NET Core).
 
-While you are reading this it's at a very early stage because I only add new content in my spare (free) time.
+Side Note: I only add new content in my spare time during my retraining to IT specialist for application development.
