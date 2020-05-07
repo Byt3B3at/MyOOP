@@ -7,22 +7,29 @@ namespace MyOOP
     {
         internal static int Main()
         {
-            var Max = new FullTimeEmployee()
+            // Using an interface makes the code more flexible
+            // but ensures at the same time that the commitments
+            // of an Employee are fulfilled.
+            IEmployable Max = new FullTimeEmployee()
             {
                 FirstName = "Max",
                 LastName = "Mustermann",
                 AnnualSalary = 60000
             };
             Console.WriteLine($"{Max.GetFullName()} earns {Max.GetMonthlySalary()} per month.");
+            Max.WorkOn();
 
-            var Moritz = new Freelancer()
+            Console.WriteLine();
+
+            IEmployable Moritz = new Freelancer()
             {
                 FirstName = "Moritz",
                 LastName = "Mustermann",
                 HourlyWage = 200,
-                HoursWorked = 160
+                HoursWorked = 20
             };
-            Console.WriteLine($"{Moritz.GetFullName()} earned {Moritz.GetMonthlySalary()}.");
+            Console.WriteLine($"{Moritz.GetFullName()} worked {((Freelancer)Moritz).HoursWorked} hours and earned {Moritz.GetMonthlySalary()} last month.");
+            Moritz.WorkOn();
 
             Console.WriteLine("\nProgram end reached. Press the any-key to exit.");
             Console.ReadKey();
